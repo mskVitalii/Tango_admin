@@ -7,7 +7,7 @@ import Users      from "./pages/Users";
 import Register   from "./auth/register";
 import Login      from "./auth/login";
 
-import { Route, BrowserRouter as Router, Switch} from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Navbar from './components/Navbar';
 
 const styles = {
@@ -22,15 +22,15 @@ export function App() {
       <Navbar />
 
       <div style={styles.divCont}>
-        <Switch>
-          <Route path="/statistics" component={Statistics} />
-          <Route path="/add-film"   component={AddFilm} />
-          <Route path="/films"      component={AllFIlms} />
-          <Route path="/users"      component={Users} />
+        <Routes>
+          <Route path="/statistics" element={<Statistics />} />
+          <Route path="/add-film"   element={<AddFilm />} />
+          <Route path="/films"      element={<AllFIlms />} />
+          <Route path="/users"      element={<Users />} />
 
-          <Route path="/login"      component={Login} />
-          <Route path="/register"   component={Register} />
-        </Switch>
+          <Route path="/login"      element={<Login />} />
+          <Route path="/register"   element={<Register />} />
+        </Routes>
       </div>
     </Router>
   );
